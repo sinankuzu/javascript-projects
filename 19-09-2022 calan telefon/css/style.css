@@ -1,0 +1,45 @@
+
+
+.container{
+    text-align: center;
+}
+
+h1{
+    color: red;
+}
+.buttons{
+    margin-top: 50px;
+    
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 30px;
+
+}
+
+.img-div img{
+    width: 400px;
+    height: 400px;
+}
+
+.ara{
+    border-radius: 7px;
+    border-color: rgb(219, 188, 13);
+    color: rgb(219, 188, 13);
+}
+
+.baglat{
+    border-radius: 7px;
+    border-color: blue;
+    color: blue;
+}
+
+.konus{
+    border-radius: 7px;
+    border-color: red;
+    color: red;
+}
