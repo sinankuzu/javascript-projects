@@ -1,179 +1,52 @@
-const renkler = [
-  "AliceBlue",
-  "AntiqueWhite",
-  "Aqua",
-  "Aquamarine",
-  "Azure",
-  "Beige",
-  "Bisque",
-  "Black",
-  "BlanchedAlmond",
-  "Blue",
-  "BlueViolet",
-  "Brown",
-  "BurlyWood",
-  "CadetBlue",
-  "Chartreuse",
-  "Chocolate",
-  "Coral",
-  "CornflowerBlue",
-  "Cornsilk",
-  "Crimson",
-  "Cyan",
-  "DarkBlue",
-  "DarkCyan",
-  "DarkGoldenRod",
-  "DarkGray",
-  "DarkGrey",
-  "DarkGreen",
-  "DarkKhaki",
-  "DarkMagenta",
-  "DarkOliveGreen",
-  "DarkOrange",
-  "DarkOrchid",
-  "DarkRed",
-  "DarkSalmon",
-  "DarkSeaGreen",
-  "DarkSlateBlue",
-  "DarkSlateGray",
-  "DarkSlateGrey",
-  "DarkTurquoise",
-  "DarkViolet",
-  "DeepPink",
-  "DeepSkyBlue",
-  "DimGray",
-  "DimGrey",
-  "DodgerBlue",
-  "FireBrick",
-  "FloralWhite",
-  "ForestGreen",
-  "Fuchsia",
-  "Gainsboro",
-  "GhostWhite",
-  "Gold",
-  "GoldenRod",
-  "Gray",
-  "Grey",
-  "Green",
-  "GreenYellow",
-  "HoneyDew",
-  "HotPink",
-  "IndianRed",
-  "Indigo",
-  "Ivory",
-  "Khaki",
-  "Lavender",
-  "LavenderBlush",
-  "LawnGreen",
-  "LemonChiffon",
-  "LightBlue",
-  "LightCoral",
-  "LightCyan",
-  "LightGoldenRodYellow",
-  "LightGray",
-  "LightGrey",
-  "LightGreen",
-  "LightPink",
-  "LightSalmon",
-  "LightSeaGreen",
-  "LightSkyBlue",
-  "LightSlateGray",
-  "LightSlateGrey",
-  "LightSteelBlue",
-  "LightYellow",
-  "Lime",
-  "LimeGreen",
-  "Linen",
-  "Magenta",
-  "Maroon",
-  "MediumAquaMarine",
-  "MediumBlue",
-  "MediumOrchid",
-  "MediumPurple",
-  "MediumSeaGreen",
-  "MediumSlateBlue",
-  "MediumSpringGreen",
-  "MediumTurquoise",
-  "MediumVioletRed",
-  "MidnightBlue",
-  "MintCream",
-  "MistyRose",
-  "Moccasin",
-  "NavajoWhite",
-  "Navy",
-  "OldLace",
-  "Olive",
-  "OliveDrab",
-  "Orange",
-  "OrangeRed",
-  "Orchid",
-  "PaleGoldenRod",
-  "PaleGreen",
-  "PaleTurquoise",
-  "PaleVioletRed",
-  "PapayaWhip",
-  "PeachPuff",
-  "Peru",
-  "Pink",
-  "Plum",
-  "PowderBlue",
-  "Purple",
-  "RebeccaPurple",
-  "Red",
-  "RosyBrown",
-  "RoyalBlue",
-  "SaddleBrown",
-  "Salmon",
-  "SandyBrown",
-  "SeaGreen",
-  "SeaShell",
-  "Sienna",
-  "Silver",
-  "SkyBlue",
-  "SlateBlue",
-  "SlateGray",
-  "SlateGrey",
-  "Snow",
-  "SpringGreen",
-  "SteelBlue",
-  "Tan",
-  "Teal",
-  "Thistle",
-  "Tomato",
-  "Turquoise",
-  "Violet",
-  "Wheat",
-  "White",
-  "WhiteSmoke",
-  "Yellow",
-  "YellowGreen",
-];
+
 
 const againButton = document.querySelector(".again")
-const girilenTahmin = document.querySelector(".tahmin");
 const checkButton = document.querySelector(".check");
-const sayi =Math.floor(Math.random() * 20);
+let sayi =Math.floor(Math.random() * 20);
 const arttirAzalt = document.querySelector(".arttir-azalt")
-const winLose = document.querySelector("win-lose")
+const winLose = document.querySelector(".win-lose")
+const yazilanSayi = document.querySelector(".yazilan-sayi");
+const kalanHak = document.querySelector(".kalan-hak")
 let score = 10;
 console.log(sayi);
 
 
 checkButton.onclick = () => {
-  if (score > 0) {
-    if (girilenTahmin != sayi) {
+    
+     const girilenTahmin = document.querySelector(".tahmin").value;
+     yazilanSayi.innerHTML = `girilen sayi: ${girilenTahmin}`;
+    if (score > 1 && girilenTahmin != sayi) {
+    
       document.querySelector("body").style.backgroundColor = "red";
       score -= 1;
       console.log(score);
-      if (girilenTahmin > sayi) {
+      kalanHak.innerHTML = `Kalan hakkiniz: ${score}`;
+      if (Number(girilenTahmin) > sayi) {
         arttirAzalt.innerHTML = "Azalt";
-      }
-      else{
+      } else {
         arttirAzalt.innerHTML = "Arttir";
       }
     }
-  }
+    else if(girilenTahmin == sayi) {
+      winLose.innerHTML = "YOU WIN! NICE!!!";
+      document.querySelector("body").style.backgroundColor = "green";
+      yazilanSayi.innerHTML = "girilen sayi:?";
+      kalanHak.innerHTML = `Kalan hakkiniz:?`;
+    }
+  
   else{
-    winLose.innerHTML = "WIN";
+    winLose.innerHTML = "GAME OVER YOU LOST";
+    kalanHak.innerHTML = `Kalan hakkiniz:0`;
+    yazilanSayi.innerHTML = "girilen sayi:?";
   }
+}
+
+
+
+againButton.onclick=()=>{
+    document.querySelector("body").style.backgroundColor = "grey";
+    score = 10;
+    sayi = Math.floor(Math.random() * 20);
+    kalanHak.innerHTML = `Kalan hakkiniz:10`;
+    console.log(sayi);
 }
