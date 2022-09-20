@@ -53,3 +53,25 @@ text.value = text.value.toLowerCase();
 
     liste.innerHTML += `<li>${dil.value}</li>`;
   };
+
+  //! ekle butonuna basıldığında input a girilen değerler ul liste me eklensin
+//*UZUN YOL
+  // yeni girilen satiri saklamak icin bir li olusturduk.
+  // const yeniLi = document.createElement("li");
+  // yeni li icin textnode olusturduk
+  // const textNode = document.createTextNode(dil.value);
+  //olusturdugumuz texnode'u yeni li'ye bagladik.
+  // yeniLi.appendChild(textNode);
+  // yeni eklenen satiri var olan listeye (ul) baglayalim.
+  // liste.appendChild(yeniLi);
+
+
+  document.querySelector(".ekle").onclick=()=>{
+const liste=document.querySelector(".liste")
+const dil=document.querySelector(".dil")
+
+liste.innerHTML+=`<li>${dil.value}</li>`
+//!inputtaki veri listeye eklenince inputtan silinsin
+dil.value=""
+
+  }
