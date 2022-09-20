@@ -65,11 +65,11 @@ text.value = text.value.toLowerCase();
   // yeni eklenen satiri var olan listeye (ul) baglayalim.
   // liste.appendChild(yeniLi);
 
-
+console.log("hata yok");
   document.querySelector(".ekle").onclick=()=>{
 const liste=document.querySelector(".liste")
 const dil=document.querySelector(".dil")
-
+console.log("hata yok");
 liste.innerHTML+=`<li>${dil.value}</li>`
 //!inputtaki veri listeye eklenince inputtan silinsin
 dil.value=""
