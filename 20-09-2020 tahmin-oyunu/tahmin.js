@@ -5,6 +5,7 @@ const arttirAzalt = document.querySelector(".arttir-azalt")
 const winLose = document.querySelector(".win-lose")
 const yazilanSayi = document.querySelector(".yazilan-sayi");
 const kalanHak = document.querySelector(".kalan-hak")
+const bildinMi = document.querySelector(".bildin-mi")
 let score = 10;
 console.log(sayi);
 
@@ -27,11 +28,12 @@ checkButton.onclick = () => {
       }
     }
     else if(girilenTahmin == sayi) {
-      winLose.innerHTML = "YOU WIN! NICE!!!";
+      winLose.innerHTML = "YOU WON! NICE!!!";
       document.querySelector("body").style.backgroundColor = "green";
       yazilanSayi.innerHTML = "girilen sayi:?";
       kalanHak.innerHTML = `Kalan hakkiniz:?`;
       arttirAzalt.innerHTML ="Girdiginiz sayiya gore burda arttir veya azalt yazicak";
+      bildinMi.innerHTML = `${sayi}`;
     }
   
   else{
@@ -52,6 +54,6 @@ againButton.onclick=()=>{
     yazilanSayi.innerHTML = "girilen sayi:?";
     winLose.innerHTML = "";
     arttirAzalt.innerHTML = "Girdiginiz sayiya gore burda arttir veya azalt yazicak";
-
+    bildinMi.innerHTML = `?`;
     console.log(sayi);
 }
