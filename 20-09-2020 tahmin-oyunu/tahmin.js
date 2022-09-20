@@ -32,12 +32,14 @@ checkButton.onclick = () => {
       document.querySelector("body").style.backgroundColor = "green";
       yazilanSayi.innerHTML = "girilen sayi:?";
       kalanHak.innerHTML = `Kalan hakkiniz:?`;
+      arttirAzalt.innerHTML ="Girdiginiz sayiya gore burda arttir veya azalt yazicak";
     }
   
   else{
     winLose.innerHTML = "GAME OVER YOU LOST";
     kalanHak.innerHTML = `Kalan hakkiniz:0`;
     yazilanSayi.innerHTML = "girilen sayi:?";
+    arttirAzalt.innerHTML ="Girdiginiz sayiya gore burda arttir veya azalt yazicak";
   }
 }
 
@@ -48,5 +50,9 @@ againButton.onclick=()=>{
     score = 10;
     sayi = Math.floor(Math.random() * 20);
     kalanHak.innerHTML = `Kalan hakkiniz:10`;
+    yazilanSayi.innerHTML = "girilen sayi:?";
+    winLose.innerHTML = "";
+    arttirAzalt.innerHTML = "Girdiginiz sayiya gore burda arttir veya azalt yazicak";
+
     console.log(sayi);
 }
