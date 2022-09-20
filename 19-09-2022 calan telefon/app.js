@@ -28,3 +28,21 @@ baglatButonu.onclick = ()=>{
 konusButonu.onclick = () =>{
     degisenResimler.src = "./img/telefon.gif"
 }
+
+//!klavyeden inputa veri girişi yapılırken elimizi tuştan çektiğimizde varolan değişiklik
+
+const text=document.querySelector(".textbox")
+const tik=document.querySelector(".checkbox")
+
+// checked=metodu checkbox inputun tikli olup olmadığını kontrol eder. tıklanmışsa true döndürür
+
+//? onkeyup=klavyeden elini çektiğinde
+text.onkeyup=()=>{
+ if(tik.checked){
+text.value=text.value.toUpperCase();
+
+ }else{
+text.value = text.value.toLowerCase();
+ }
+
+}
