@@ -75,3 +75,13 @@ liste.innerHTML+=`<li>${dil.value}</li>`
 dil.value=""
 
   }
+
+    //!sil butonuna tıklandığında ul listesinden silme metodu olan removeChild metodunu kullanıcaz
+
+  document.querySelector(".sil").onclick = () => {
+    const liste = document.querySelector(".liste");
+
+    liste.removeChild(liste.lastElementChild); // ul nin son child ını sildirdi
+    //!liste.removeChild(liste.firstElementChild); // ul nin ilk child ını sildirdi
+    liste.removeChild(liste.children[2]); // ul nin 2 indexli child ını sildirdi
+  };
