@@ -1,5 +1,3 @@
-
-
 const againButton = document.querySelector(".again")
 const checkButton = document.querySelector(".check");
 let sayi =Math.floor(Math.random() * 20);
@@ -15,6 +13,7 @@ checkButton.onclick = () => {
     
      const girilenTahmin = document.querySelector(".tahmin").value;
      yazilanSayi.innerHTML = `girilen sayi: ${girilenTahmin}`;
+     
     if (score > 1 && girilenTahmin != sayi) {
     
       document.querySelector("body").style.backgroundColor = "red";
