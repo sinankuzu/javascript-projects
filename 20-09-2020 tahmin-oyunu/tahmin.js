@@ -149,6 +149,31 @@ const renkler = [
   "YellowGreen",
 ];
 
-
+const againButton = document.querySelector(".again")
 const girilenTahmin = document.querySelector(".tahmin");
-const checkButton = document.querrySelector(".check");
+const checkButton = document.querySelector(".check");
+const sayi =Math.floor(Math.random() * 20);
+const arttirAzalt = document.querySelector(".arttir-azalt")
+const winLose = document.querySelector("win-lose")
+let score = 10;
+console.log(sayi);
+
+
+checkButton.onclick = () => {
+  if (score > 0) {
+    if (girilenTahmin != sayi) {
+      document.querySelector("body").style.backgroundColor = "red";
+      score -= 1;
+      console.log(score);
+      if (girilenTahmin > sayi) {
+        arttirAzalt.innerHTML = "Azalt";
+      }
+      else{
+        arttirAzalt.innerHTML = "Arttir";
+      }
+    }
+  }
+  else{
+    winLose.innerHTML = "WIN";
+  }
+}
