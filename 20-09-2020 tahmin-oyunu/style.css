@@ -1,8 +1,104 @@
-.bildin-mi{
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+body{
+    font-family: 'DynaPuff', cursive;
+    background-color: aqua;
+    color: rgb(81, 62, 34);
+    text-align: center;
+    
+}
+
+.again{
+    font-size: 40px;
+    font-family: 'DynaPuff', cursive;
+    color: rgb(81, 62, 34);
+    background-color: rgb(111, 72, 147);
+    border: 1px solid rgb(111, 72, 147);
+    border-radius: 20px;
+    
+}
+
+.again1{
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+
+
+
+.bildin-mi{
+ margin-left: 45%;
+    width: 200px;
+    border:5px solid black;
+    font-size: 100px;
+    
+    
+}
+
+
+
+.guess-input{
+   
+    display: flex;
+    margin-left: 45%;
+    
+}
+
+.tahmin{
+    
+    background-color: rgb(159, 247, 247);
+    font-size: 70px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.yazilan-sayi{
+    
+    font-size: 25px;
+}
+
+
+.arttir-azalt{
+    
+    font-size: 30px;
+}
+
+.kalan-hak{
+    
+    font-size: 40px;
+}
+
+img{
+
+    width: 500px;
+}
+
+.gifler{
+    display: flex;
     justify-content: center;
-    width: 40px;
-    height:40px;
-    border:1px solid black;
+    align-items: center;
+}
+.check{
+ 
+
+
+    
+}
+
+.check button{
+    color: rgb(81, 62, 34);
+font-size: 35px;
+background-color: bisque;
+border: 1px solid bisque;
+background-color: rgb(111, 72, 147);
+border: 1px solid rgb(111, 72, 147);
+border-radius: 15px;
+
+}
+
+.win-lose{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: rgb(228, 99, 172);
 }
