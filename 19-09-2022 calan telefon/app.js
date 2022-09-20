@@ -46,3 +46,10 @@ text.value = text.value.toLowerCase();
  }
 
 }
+
+  document.querySelector(".ekle").onclick = () => {
+    const liste = document.querySelector(".liste");
+    const dil = document.querySelector(".dil");
+
+    liste.innerHTML += `<li>${dil.value}</li>`;
+  };
