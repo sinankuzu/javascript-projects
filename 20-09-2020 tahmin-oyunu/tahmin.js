@@ -7,12 +7,12 @@ const yazilanSayi = document.querySelector(".yazilan-sayi");
 const kalanHak = document.querySelector(".kalan-hak")
 const bildinMi = document.querySelector(".bildin-mi")
 const gifNedir = document.querySelector(".gifler2")
+const topScoreValue = document.querySelector(".top-score-value")
+
 let score = 10;
 console.log(sayi);
-
-// gifNedir.onmouseover = () => {
-//   gifNedir.src = "./img/fail-hay.gif";
-// };
+let topScore = localStorage.getItem("topScore") || 0;
+document.querySelector(".top-score").innerHTML = topScore;
 
 checkButton.onclick = () => {
     
@@ -39,6 +39,11 @@ checkButton.onclick = () => {
       arttirAzalt.innerHTML = "MORE or LESS";
       bildinMi.innerHTML = `${sayi}`;
       gifNedir.src = "./img/success.gif";
+      
+      if(score > topScoreValue){
+        topScoreValue.innerHTML = score;
+        localStorage.setItem("topScore", topScore);
+      }
     }
   
   else{
