@@ -4,7 +4,8 @@ const screenOperator = document.querySelector(".screenOperator");
 const screen2 = document.querySelector(".screen2");
 const calculator = document.querySelector(".calculator");
 const operators = document.querySelector(".orange");
-let sonuc = "";
+let sonuc = document.querySelector(".sonuc");
+// let sonuc = "";
 let islem = "";
 
 calculator.onclick = (e) => {
@@ -27,20 +28,36 @@ calculator.onclick = (e) => {
       islem = "/";
     }
 
+if (e.target.textContent == "=") {
+  if (islem == "+") {
+    screen2.textContent = y + x;
+  } else if (islem == "-") {
+    screen2.textContent = y - x;
+  } else if (islem == "x") {
+    screen2.textContent = y * x;
+  } else if (islem == "÷") {
+    screen2.textContent = y / x;
+  }
+
+  screen1.textContent = "";
+  screenOperator.textContent = "";
+}
+   
     screen1.textContent = screen2.textContent;
     screen2.textContent = "";
   };
-  if (screen2.textContent == "") {
-    let y = "";
-    let x = "";
-  }
+//   if (screen2.textContent == "") {
+//     let y = "";
+//     let x = "";
+//   }
   if (e.target.classList.contains("numbers")) {
     
     screen2.textContent += e.target.textContent;
     
     x = Number(screen2.textContent);
     y = Number(screen1.textContent);
-  } else if (e.target.classList.contains("orange")) {
+  } 
+  else if (e.target.classList.contains("orange")) {
     if (y == "") {
       screenOperator.textContent = e.target.textContent;
       screen1.textContent = screen2.textContent;
@@ -48,24 +65,21 @@ calculator.onclick = (e) => {
     } else {
       hesapMakina(e.target.textContent);
     }
-    if (e.target.textContent == "=") {
-      if (islem == "+") {
-        screen2.textContent = y + x;
-        sonuc = y + x;
-      } else if (islem == "-") {
-        screen2.textContent = y - x;
-        sonuc = y - x;
-      } else if (islem == "x") {
-        screen2.textContent = y * x;
-        sonuc = y * x;
-      } else if (islem == "÷") {
-        screen2.textContent = y / x;
-        sonuc = y / x;
-      }
-      screen2.textContent = sonuc;
-      screen1.textContent = "";
-      screenOperator.textContent = "";
-    }
+    // if (e.target.textContent == "=") {
+    //   if (islem == "+") {
+    //     screen2.textContent = y + x;
+    //   } else if (islem == "-") {
+    //     screen2.textContent = y - x;
+    //   } else if (islem == "x") {
+    //     screen2.textContent = y * x;
+    //   } else if (islem == "÷") {
+    //     screen2.textContent = y / x;
+    //   }
+      
+    //   screen1.textContent = "";
+    //   screenOperator.textContent = "";
+    
+    // }
    
   }
 };
