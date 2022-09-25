@@ -5,15 +5,18 @@ const screen2 = document.querySelector(".screen2");
 const calculator = document.querySelector(".calculator");
 const operators = document.querySelector(".orange");
 let sonuc = document.querySelector(".result");
+const sifir = document.querySelector(".number0");
 // let sonuc = "";
 let islem = "";
 let a = ""
+
 calculator.onclick = (e) => {
   const hesapMakina = function (z) {
+    screen2.textContent = sonuc.textContent;
     sonuc = "";
     if (e.target.textContent == "+") {
       screen2.textContent = y + x;
-      sonuc = y + x;
+      sonuc = `y + x`;
       islem = "+";
     } else if (e.target.textContent == "-") {
       screen2.textContent = y - x;
@@ -35,6 +38,7 @@ calculator.onclick = (e) => {
       if (islem == "+") {
         screen2.textContent = y + x;
         sonuc = y + x;
+        
       } else if (islem == "-") {
         screen2.textContent = y - x;
         sonuc=y - x;
@@ -52,14 +56,19 @@ calculator.onclick = (e) => {
     }
     
   };
-
+ 
   if (e.target.classList.contains("numbers")) {
     
     screen2.textContent += e.target.textContent;
-    
-   
     y = Number(screen1.textContent);
-     x = Number(screen2.textContent);
+    x = Number(screen2.textContent);
+    if(screen2.textContent.startsWith("0")){
+      
+      screen2.textContent = "0";
+    }
+
+   
+    
   } 
   else if (e.target.classList.contains("orange")) {
     
@@ -69,6 +78,7 @@ calculator.onclick = (e) => {
       screen2.textContent = "";
     } else {
       hesapMakina(e.target.textContent);
+      screenOperator.textContent = e.target.textContent;
     }
     
    
