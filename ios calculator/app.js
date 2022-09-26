@@ -22,34 +22,34 @@ calculator.onclick = (e) => {
       screen2.textContent = y + x;
       sonuc = y + x;
       islem = "+";
-      if(screen1.textContent != ""){
-        screen1.textContent = y + x;
+      
+        screen1.textContent = sonuc;
         sonuc = y + x;
-      }
+      
     } else if (e.target.textContent == "-") {
       screen2.textContent = y - x;
       sonuc = y - x;
       islem = "-";
-      if (screen1.textContent != "") {
-        screen1.textContent = y - x;
+      
+        screen1.textContent = sonuc;
         sonuc = y - x;
-      }
+      
     } else if (e.target.textContent == "x") {
       screen2.textContent = y * x;
       sonuc = y * x;
       islem = "*";
-      if (screen1.textContent != "") {
-        screen1.textContent = y * x;
+      
+        screen1.textContent = sonuc;
         sonuc = y * x;
-      }
+      
     } else if (e.target.textContent == "÷") {
       screen2.textContent = y / x;
       sonuc = y / x;
       islem = "/";
-      if (screen1.textContent != "") {
-        screen1.textContent = y / x;
+      
+        screen1.textContent = sonuc;
         sonuc = y / x;
-      }
+      
     }
 
     islem = screenOperator.textContent;
