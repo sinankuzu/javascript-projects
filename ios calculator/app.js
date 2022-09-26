@@ -34,6 +34,7 @@ calculator.onclick = (e) => {
       sonuc = y / x;
       islem = "/";
     }
+    
     islem = screenOperator.textContent;
     screen1.textContent = screen2.textContent;
     screen2.textContent = "";
