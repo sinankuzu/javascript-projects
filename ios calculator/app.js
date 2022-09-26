@@ -7,7 +7,8 @@ const operators = document.querySelector(".orange");
 let sonuc = document.querySelector(".result");
 const sifir = document.querySelector(".number0");
 const myDot = document.querySelector(".dot")
-const myDel = document.querySelector(".ac")
+// // const myDel = document.querySelector(".ac")
+// const plusMinus = document.querySelector(".plus-minus")
 // let sonuc = "";
 let islem = "";
 let a = ""
@@ -34,7 +35,7 @@ calculator.onclick = (e) => {
       sonuc = y / x;
       islem = "/";
     }
-    
+
     islem = screenOperator.textContent;
     screen1.textContent = screen2.textContent;
     screen2.textContent = "";
@@ -56,7 +57,7 @@ calculator.onclick = (e) => {
         // screen2.textContent = y / x;
         sonuc = y / x;
       }
-
+      
       screen1.textContent = "";
       screenOperator.textContent = "";
       screen2.textContent = sonuc;
@@ -110,9 +111,25 @@ calculator.onclick = (e) => {
     
    
   }
+if(e.target.classList.contains("perc")){
+  if(screen1.textContent ==""){
+  screen2.textContent = screen2.textContent * 0.01;
+  }
+  else{
+    screen2.textContent = screen1.textContent * (screen2.textContent * 0.01);
+    screen1.textContent = "";
+    screenOperator.textContent = "";
+  }
+}
+
   if (e.target.classList.contains("ac")) {
     screen1.textContent = "";
     screenOperator.textContent = "";
     screen2.textContent = "";
+  }
+
+  if(e.target.classList.contains("plus-minus")){
+    screen2.textContent = screen2.textContent * -1
+    
   }
 };
