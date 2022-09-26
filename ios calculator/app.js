@@ -15,49 +15,31 @@ let a = ""
 
 calculator.onclick = (e) => {
   const hesapMakina = function (z) {
-    // screen2.textContent = sonuc.textContent;
-    // sonuc = "";
+    screen2.textContent = sonuc.textContent;
+    sonuc = "";
     
     if (e.target.textContent == "+") {
       screen2.textContent = y + x;
       sonuc = y + x;
       islem = "+";
-      
-        screen1.textContent = sonuc;
-        sonuc = y + x;
-      
     } else if (e.target.textContent == "-") {
       screen2.textContent = y - x;
       sonuc = y - x;
       islem = "-";
-      
-        screen1.textContent = sonuc;
-        sonuc = y - x;
-      
     } else if (e.target.textContent == "x") {
       screen2.textContent = y * x;
       sonuc = y * x;
       islem = "*";
-      
-        screen1.textContent = sonuc;
-        sonuc = y * x;
-      
     } else if (e.target.textContent == "÷") {
       screen2.textContent = y / x;
       sonuc = y / x;
       islem = "/";
-      
-        screen1.textContent = sonuc;
-        sonuc = y / x;
-      
     }
 
     islem = screenOperator.textContent;
     screen1.textContent = screen2.textContent;
     screen2.textContent = "";
-    if (screen2.textContent == "") {
-      myDot.classList.remove("block");
-    }
+    
     if (e.target.textContent == "=") {
       if (islem == "+") {
         screen2.textContent = y + x;
@@ -135,6 +117,7 @@ if(e.target.classList.contains("perc")){
     screen2.textContent = screen1.textContent * (screen2.textContent * 0.01);
     screen1.textContent = "";
     screenOperator.textContent = "";
+    
   }
 }
 
@@ -147,5 +130,9 @@ if(e.target.classList.contains("perc")){
   if(e.target.classList.contains("plus-minus")){
     screen2.textContent = screen2.textContent * -1
     
+  
+  }
+  if (screen2.textContent == "") {
+    myDot.classList.remove("block");
   }
 };
