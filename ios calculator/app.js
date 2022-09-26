@@ -14,9 +14,10 @@ calculator.onclick = (e) => {
   const hesapMakina = function (z) {
     screen2.textContent = sonuc.textContent;
     sonuc = "";
+    
     if (e.target.textContent == "+") {
       screen2.textContent = y + x;
-      sonuc = `y + x`;
+      sonuc = y + x;
       islem = "+";
     } else if (e.target.textContent == "-") {
       screen2.textContent = y - x;
@@ -59,16 +60,24 @@ calculator.onclick = (e) => {
  
   if (e.target.classList.contains("numbers")) {
     
-    screen2.textContent += e.target.textContent;
-    y = Number(screen1.textContent);
-    x = Number(screen2.textContent);
-    if(screen2.textContent.startsWith("0")){
-      
-      screen2.textContent = "0";
-    }
-
-   
     
+    if(screen2.textContent.startsWith("0") && e.target.textContent == "0"){
+      screen2.textContent = "0";}
+      else{
+        if (screen2.textContent.startsWith("0")){
+          screen2.textContent = "";}
+          if(screen2.contains(".")){
+            
+          }
+                screen2.textContent += e.target.textContent;
+                y = Number(screen1.textContent);
+                x = Number(screen2.textContent);
+        
+          
+      }
+      
+    
+  
   } 
   else if (e.target.classList.contains("orange")) {
     
