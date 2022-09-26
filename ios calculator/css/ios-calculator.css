@@ -73,7 +73,15 @@
     
 }
 
-.ac-plus-perc{
+.ac{
+    background-color: rgb(165,165,165);
+    color: black;
+}
+.plus-minus{
+    background-color: rgb(165,165,165);
+    color: black;
+}
+.perc{
     background-color: rgb(165,165,165);
     color: black;
 }
@@ -124,3 +132,7 @@ display: flex;
 }
 
 
+.block{
+    pointer-events: none;
+    
+}
