@@ -4,79 +4,18 @@ const screenOperator = document.querySelector(".screenOperator");
 const screen2 = document.querySelector(".screen2");
 const calculator = document.querySelector(".calculator");
 const operators = document.querySelector(".orange");
-let sonuc = document.querySelector(".result");
 const sifir = document.querySelector(".number0");
 const myDot = document.querySelector(".dot");
-// // const myDel = document.querySelector(".ac")
-// const plusMinus = document.querySelector(".plus-minus")
-// let sonuc = "";
+
 let islem = "";
 let a = "";
 
 calculator.onclick = (e) => {
-  const hesapMakina = function (z) {
-    // screen2.textContent = sonuc.textContent;
-    // sonuc = "";
-
-    if (islem == "+") {
-      screen2.textContent = y + x;
-      sonuc = y + x;
-    } else if (islem == "-") {
-      screen2.textContent = y - x;
-      sonuc = y - x;
-    } else if (islem == "x") {
-      screen2.textContent = y * x;
-      sonuc = y * x;
-    } else if (islem == "÷") {
-      screen2.textContent = y / x;
-      sonuc = y / x;
-    }
-    // screen2.textContent = sonuc;
-    // if (e.target.textContent == "+") {
-    //   screen2.textContent = y + x;
-    //   sonuc = y + x;
-    //   islem = "+";
-    // } else if (e.target.textContent == "-") {
-    //   screen2.textContent = y - x;
-    //   sonuc = y - x;
-    //   islem = "-";
-    // } else if (e.target.textContent == "x") {
-    //   screen2.textContent = y * x;
-    //   sonuc = y * x;
-    //   islem = "*";
-    // } else if (e.target.textContent == "÷") {
-    //   screen2.textContent = y / x;
-    //   sonuc = y / x;
-    //   islem = "/";
-    // }
-
-    islem = screenOperator.textContent;
-    screen1.textContent = screen2.textContent;
-    screen2.textContent = "";
-
-    if (e.target.textContent == "=") {
-      if (islem == "+") {
-        screen2.textContent = y + x;
-        sonuc = y + x;
-
-      } else if (islem == "-") {
-        screen2.textContent = y - x;
-        sonuc=y - x;
-      } else if (islem == "x") {
-        screen2.textContent = y * x;
-        sonuc = y * x;
-      } else if (islem == "÷") {
-        screen2.textContent = y / x;
-        sonuc = y / x;
-      }
-
-      screen1.textContent = "";
-      screenOperator.textContent = "";
-      screen2.textContent = sonuc;
-    }
-  };
-
+  
   if (e.target.classList.contains("numbers")) {
+   if(islem == "="){
+    screen2.textContent = "";
+   }
     if (
       screen2.textContent.startsWith("0") &&
       e.target.textContent == "0" &&
@@ -103,15 +42,44 @@ calculator.onclick = (e) => {
       myDot.classList.add("block");
     }
   }
-  if (e.target.classList.contains("orange")) {
+  const hesapMakina = function () {
+    if (islem == "+") {
+      screen2.textContent = y + x;
+    } else if (islem == "-") {
+      screen2.textContent = y - x;
+    } else if (islem == "x") {
+      screen2.textContent = y * x;
+    } else if (islem == "÷") {
+      screen2.textContent = y / x;
+    }
+  };
+
+  if (e.target.classList.contains("equal")) {
+    hesapMakina();
+    screen1.textContent = "";
+    screenOperator.textContent = "";
+    islem = "="
+  }
+ if (e.target.classList.contains("orange") && islem) {
+   hesapMakina();
+   islem = e.target.textContent;
+   screenOperator.textContent = e.target.textContent;
+   screen1.textContent = screen2.textContent;
+   screen2.textContent = "";
+ }
+
+  if (e.target.classList.contains("orange") && islem == "") {
+    islem = e.target.textContent;
+
     screenOperator.textContent = e.target.textContent;
     if (y == "") {
       screen1.textContent = screen2.textContent;
       screen2.textContent = "";
-    } else {
-      hesapMakina(e.target.textContent);
+    } else if (y && x) {
+      hesapMakina();
     }
   }
+ 
   if (e.target.classList.contains("perc")) {
     if (screen1.textContent == "") {
       screen2.textContent = screen2.textContent * 0.01;

@@ -113,21 +113,21 @@
     display: flex;
    justify-content: end;
     font-size: 20px;
-    border: 3px solid purple;
+    
 }
 
 .screenOperator{
 display: flex;
    justify-content: end;
     font-size: 15px;
-    border: 3px solid purple;
+    
 }
 
 .screen2{
    display: flex;
    justify-content: end;
     font-size: 30px;
-    border: 3px solid purple;
+    
     
 }
 
