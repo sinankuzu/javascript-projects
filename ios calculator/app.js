@@ -15,6 +15,7 @@ calculator.onclick = (e) => {
   if (e.target.classList.contains("numbers")) {
    if(islem == "="){
     screen2.textContent = "";
+    islem = "";
    }
     if (
       screen2.textContent.startsWith("0") &&
