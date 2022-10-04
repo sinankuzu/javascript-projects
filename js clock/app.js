@@ -1,6 +1,10 @@
 const myClock = document.querySelector(".clock")
-const hours = getHours();
-const minutes = getMinutes();
-const seconds = getSeconds();
+const myTime = new Date()
+const hours = myTime.getHours();
+const minutes = myTime.getMinutes();
+const seconds = myTime.getSeconds();
+console.log(hours);
+while(true){
+    myClock.innerHTML = `${hours}:${minutes}:${seconds}`;
 
-myClock.innerHTML = `${hours}${minutes}${seconds}`;
+}
