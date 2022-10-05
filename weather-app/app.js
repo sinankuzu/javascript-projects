@@ -16,7 +16,7 @@ const getData = (city) =>
 
 const printScreen = (city) => {
 const iconUrl = `http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`;
-myCards.innerHTML = `<div class="card">
+myCards.innerHTML += `<div class="card">
     <div class="names">${city.name}</div>
     <div class="celcius">${city.main.temp}</div>
     <div class="icons"><img src="${iconUrl}"></img></div>
