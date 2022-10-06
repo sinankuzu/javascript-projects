@@ -22,22 +22,32 @@ body {
 .input1 {
   width: 18vw;
   height: 5vh;
-  font-size: 3vh;
+  font-size: max(1vw, 30px);
   border-style: hidden;
   outline: none;
   background-color:rgb(107, 91, 149) ;
  border-bottom: 1px solid;
  color: white;
  font-family: 'Alegreya', serif;
+}
 
-  
+.input1::placeholder{
+    font-size: max(1vw, 20px);
 }
 
 .button1 {
   width: 5vw;
-  height: 3vh;
+  height: 4vh;
   text-align: center;
   cursor: pointer;
+  border-radius: 20px;
+  border-style: hidden;
+  font-size: max(1vw, 5px);
+
+}
+
+.error{
+    margin-top: 10px;
 }
 
 .cards{
@@ -62,6 +72,12 @@ body {
   max-width: 240px;
   box-shadow: 10px 10px 20px rgb(170, 191, 64);
   font-family: 'Old Standard TT', serif;
+  margin: 20px;
+}
+
+.country-short{
+    background-color: yellow;
+    font-size:max(0.7vw, 20px)
 }
 .card:hover {
   transition: 1s;
